@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Product from "./Product";
 import "./Home.css";
-const Home = () => {
+const Home = ({ cart, setCart }) => {
   const [data, setData] = useState();
 
   const fetchData = async () => {
@@ -13,14 +13,17 @@ const Home = () => {
       console.error("Error fetching data:", error);
     }
   };
-  console.log(data);
+  // console.log(data);
 
   useEffect(() => {
     fetchData();
   }, []);
   return (
     <div className="ProductContainer">
-      {data && data.map((item) => <Product key={item.id} value={item} />)}
+      {data &&
+        data.map((item) => (
+          <Product key={item.id} value={item} cart={cart} setCart={setCart} />
+        ))}
     </div>
   );
 };

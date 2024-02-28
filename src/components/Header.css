@@ -6,6 +6,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
+  position: fixed;
+  top: 0;
 }
 .logo img {
   width: 60px;
@@ -37,4 +39,9 @@
 }
 .navbar ul li a:hover {
   color: rgb(243, 242, 242);
+}
+.Count {
+  background-color: green;
+  padding: 4px 5px;
+  border-radius: 4px;
 }
