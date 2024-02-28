@@ -1,6 +1,10 @@
 /* eslint-disable react/prop-types */
+import { useContext } from "react";
 import "./Product.css";
-const Product = ({ value, cart, setCart }) => {
+import { cartContext } from "../App";
+
+const Product = ({ value }) => {
+  const { cart, setCart } = useContext(cartContext);
   const name =
     value?.name > 21 ? value.name.substring(0, 20) + "..." : value.name;
 

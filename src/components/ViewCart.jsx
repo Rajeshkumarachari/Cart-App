@@ -1,9 +1,12 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from "react";
-import "./Cart.css";
+import { useEffect, useState, useContext } from "react";
+import { cartContext } from "../App";
+
+import "./ViewCart.css";
 // eslint-disable-next-line no-unused-vars
-const Cart = ({ cart, setCart }) => {
+const ViewCart = () => {
   const [total, setTotal] = useState(0);
+  const { cart } = useContext(cartContext);
 
   useEffect(() => {
     setTotal(
@@ -32,4 +35,4 @@ const Cart = ({ cart, setCart }) => {
   );
 };
 
-export default Cart;
+export default ViewCart;
